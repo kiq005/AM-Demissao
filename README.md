@@ -14,8 +14,10 @@ Para definir a função alvo, consideramos os seguintes atributos:
 - Tempo de percurso       [minutos]
   - Tempo gasto no percurso entre a casa e o trabalho
   - Para outras atividades, considera-se o tempo em transito até o local de realização desta atividade
-- Carga horária           [horas]
-  - Horas trabalhadas por semana
+- Idade                   [Anos]
+  - Idade do funcionário
+- Número de Dependentes   [V. Numérico]
+  - Pessoas que vivem da renda (marido/esposa, filhos, pais, ...)
 - Salário                 [Reais]
   - Salário do funcionário, sem descontos
 - Renda Familiar          [Reais]
