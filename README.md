@@ -9,8 +9,6 @@ Para definir a função alvo, consideramos os seguintes atributos:
 - Tempo desde promoção    [dias]
   - Quantidade de dias passados desde a última promoção do funcionário
   - Considenra-se a contratação como primeira promoção
-- Faltas                  [dias]
-  - Número de dias que o funcionário não foi trabalhar no período de um ano
 - Tempo de percurso       [minutos]
   - Tempo gasto no percurso entre a casa e o trabalho
   - Para outras atividades, considera-se o tempo em transito até o local de realização desta atividade
