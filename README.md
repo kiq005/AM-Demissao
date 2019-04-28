@@ -156,3 +156,13 @@ Três modelos de SVM foram testados, obtendo os seguintes resultados:
 |    micro avg | 0.97      | 0.97   | 0.97     | 1000    |
 |    macro avg | 0.92      | 0.89   | 0.91     | 1000    |
 | weighted avg | 0.97      | 0.97   | 0.97     | 1000    |
+
+### SVC with sigmoidal kernel
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+|        -1.0  |     0.39  |   0.40 |     0.39 |      284|
+|         0.0  |     0.72  |   0.70 |     0.71 |      686|
+|         1.0  |     0.13  |   0.20 |     0.16 |       30|
+|   micro avg  |     0.60  |   0.60 |     0.60 |     1000|
+|   macro avg  |     0.41  |   0.43 |     0.42 |     1000|
+|weighted avg  |     0.61  |   0.60 |     0.60 |     1000|
