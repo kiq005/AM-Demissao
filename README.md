@@ -69,11 +69,11 @@ Para definir a função alvo, consideramos os seguintes atributos:
     - 3 - ...
 
 Na classificação, tres classes são consideradas:
-- Irá perdir demissão nos próximos 3 meses:
+- Irá perdir demissão nos próximos 3 meses: (1)
   - Se o valor obtido pela função considerar > 60% de chance.
-- Não irá perdir demissão nos próximos 3 meses:
+- Não irá perdir demissão nos próximos 3 meses: (-1)
   - Se o valor obtido pela função considerar < 40% de chance.
-- Incerto:
+- Incerto: (0)
   - Se o valor obtido pela função estiver entre 40% e 60% de chance.
 
 ## Distribuição
@@ -107,4 +107,52 @@ Para geração dos dados, as seguintes distribuições foram consideradas:
 - Grau de nível Hierárquico
   - Toma-se o inverso do piso de uma distribuição exponencial, limitado entre 0 e o nível hierárquico máximo, com `lambda=1/nível hierárquico máximo`.
 
+## Resultados
+Três modelos de SVM foram testados, obtendo os seguintes resultados:
 
+### SVC with linear kernel
+
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+|         -1.0 | 0.98      | 0.86   | 0.92     | 284     |
+|          0.0 | 0.92      | 0.99   | 0.96     | 686     |
+|          1.0 | 0.92      | 0.40   | 0.56     | 30      |
+|    micro avg | 0.94      | 0.94   | 0.94     | 1000    |
+|    macro avg | 0.94      | 0.75   | 0.81     | 1000    |
+| weighted avg | 0.94      | 0.94   | 0.93     | 1000    |
+
+
+### LinearSVC (linear kernel)
+
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+|         -1.0 | 0.97      | 0.89   | 0.93     | 284     |
+|          0.0 | 0.92      | 0.99   | 0.95     | 686     |
+|          1.0 | 0.50      | 0.03   | 0.06     | 30      |
+|    micro avg | 0.93      | 0.93   | 0.93     | 1000    |
+|    macro avg | 0.80      | 0.64   | 0.65     | 1000    |
+| weighted avg | 0.92      | 0.93   | 0.92     | 1000    |
+
+
+### SVC with RBF kernel
+
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+|         -1.0 | 0.97      | 0.88   | 0.92     | 284     |
+|          0.0 | 0.93      | 0.99   | 0.96     | 686     |
+|          1.0 | 0.93      | 0.43   | 0.59     | 30      |
+|    micro avg | 0.94      | 0.94   | 0.94     | 1000    |
+|    macro avg | 0.94      | 0.77   | 0.82     | 1000    |
+| weighted avg | 0.94      | 0.94   | 0.93     | 1000    |
+
+
+### SVC with polynomial (degree 3) kernel
+
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+|         -1.0 | 0.98      | 0.95   | 0.97     | 284     |
+|          0.0 | 0.97      | 0.99   | 0.98     | 686     |
+|          1.0 | 0.81      | 0.73   | 0.77     | 30      |
+|    micro avg | 0.97      | 0.97   | 0.97     | 1000    |
+|    macro avg | 0.92      | 0.89   | 0.91     | 1000    |
+| weighted avg | 0.97      | 0.97   | 0.97     | 1000    |
