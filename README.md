@@ -69,9 +69,9 @@ Para definir a função alvo, consideramos os seguintes atributos:
     - 3 - ...
 
 Na classificação, tres classes são consideradas:
-- Irá perdir demição nos próximos 3 meses:
+- Irá perdir demissão nos próximos 3 meses:
   - Se o valor obtido pela função considerar > 60% de chance.
-- Não irá perdir demição nos próximos 3 meses:
+- Não irá perdir demissão nos próximos 3 meses:
   - Se o valor obtido pela função considerar < 40% de chance.
 - Incerto:
   - Se o valor obtido pela função estiver entre 40% e 60% de chance.
