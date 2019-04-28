@@ -2,12 +2,12 @@
 Uma inteligência artificial que estima a chance de um funcionário pedir demissão, construída para a disciplina de Apredizado de Máquina, na UFABC.
 
 ## Dependencias
-Para rodar este programa, voce irá precisar dos módulos **argparser**, **numpy** e **sklearn**, que podem ser instalados utilizando o comando **pip**:
+Para rodar este programa, você irá precisar dos módulos **argparser**, **numpy** e **sklearn**, que podem ser instalados utilizando o comando **pip**:
 ```
 pip install --user sklearn numpy argparser
 ```
 
-Para visualizar as imagens será necessário **Tkinter**, que já vem instalado com a maioria das distribuições Python. Caso TKinter não esteja instalado, voce pode faze-lo pelo seu gerenciador de pacotes:
+Para visualizar as imagens será necessário **Tkinter**, que já vem instalado com a maioria das distribuições Python. Caso TKinter não esteja instalado, voce pode fazê-lo pelo seu gerenciador de pacotes:
 ```
 # Debian/Ubuntu/Mint
 apt-get install tk
