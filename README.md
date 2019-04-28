@@ -1,6 +1,20 @@
 # AM-Demissao
 Uma inteligência artificial que estima a chance de um funcionário pedir demissão, construída para a disciplina de Apredizado de Máquina, na UFABC.
 
+## Dependencias
+Para rodar este programa, voce irá precisar dos módulos **argparser**, **numpy** e **sklearn**, que podem ser instalados utilizando o comando **pip**:
+```
+pip install --user sklearn numpy argparser
+```
+
+Para visualizar as imagens será necessário **Tkinter**, que já vem instalado com a maioria das distribuições Python. Caso TKinter não esteja instalado, voce pode faze-lo pelo seu gerenciador de pacotes:
+```
+# Debian/Ubuntu/Mint
+apt-get install tk
+# Arch based
+pacman -S tk
+```
+
 ## Função alvo
 Para definir a função alvo, consideramos os seguintes atributos:
 
@@ -53,3 +67,36 @@ Para definir a função alvo, consideramos os seguintes atributos:
     - 1 - Gerente que reporta diretamente ao CEO
     - 2 - Gerente que reporta a outro gerente
     - 3 - ...
+
+## Distribuição
+Para geração dos dados, as seguintes distribuições foram consideradas:
+
+- Tempo desde contratação
+  - Uniforme, entre 0 e a idade da empresa.
+- Tempo desde promoção
+  - Há uma chance de 33% do funcionário não ter recebido promoção, caso contrário, uniforme entre 0 e o tempo desde contratação.
+- Tempo de percurso
+  - Uniforme entre um tempo mínimo e máximo estabelecido (padrão: 10 e 180 minutos).
+- Idade
+  - Gaussiana, limitada entre 16 e 75, com valor médio `m=23+idade da empresa`, e desvio padrão `s=5+idade da empresa*1.1`.
+  - A distribuição diz que:
+    - Empresas novas (idade=0) possuem funcionários com aproximadamente 23 anos, variando entre 18 e 28.
+    - Empresas com 2 anos possuem funcionários com aproximadamente 25 anos, variando entre 17 e 32.
+    - Empresas com 10 anos possuem funcionários com aproximadamente 33 anos, variando entre 17 e 49.
+    - Empresas com 20 anos possuem funcionários com aproximadamente 43 anos, variando entre 16 e 70.
+- Número de Dependentes
+  - Piso de uma distribuição exponencial, limitada entre 0 e 12, com `lambda=1`.
+- Salário
+  - Gaussiana, limitada entre um salário mínimo e máximo estabelecido (padrão: 1000 e 10000), com centralizada em 40% desse valor e com desvio padrão igual a um terço da média.
+- Participação na Renda Familiar
+  - Uniforme, entre 0 e 1.
+- Grau de Escolaridade
+  - Piso de uma distribuição gaussiana, limitada entre 0 e 9, centralizada no 5, com desvio padrão de 2.
+- Desempenho no Trabalho
+  - Piso de uma distribuição gaussiana, limitada entre 1 e 5, centralizada no 3.5, com desvio padrão de 1.
+- Relacionamento
+  - Piso de uma distribuição gaussiana, limitada entre 1 e 5, centralizada no 3.5, com desvio padrão de 1.
+- Grau de nível Hierárquico
+  - Toma-se o inverso do piso de uma distribuição exponencial, limitado entre 0 e o nível hierárquico máximo, com `lambda=1/nível hierárquico máximo`.
+
+
