@@ -18,9 +18,9 @@ pacman -S tk
 ## Função alvo
 Para definir a função alvo, consideramos os seguintes atributos:
 
-- Tempo desde contratacao        [dias] {2,25 - 3,2%}
+- Tempo desde contratacao        [anos] {2,25 - 3,2%}
   - Quantidade de dias passados desde a contratação do funcionário
-- Tempo desde promoção           [dias] {3,5 - 5,0%}
+- Tempo desde promoção           [anos] {3,5 - 5,0%}
   - Quantidade de dias passados desde a última promoção do funcionário
   - Considenra-se a contratação como primeira promoção
 - Tempo de percurso              [minutos] {3 - 4,3%}
