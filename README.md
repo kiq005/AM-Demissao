@@ -68,6 +68,14 @@ Para definir a função alvo, consideramos os seguintes atributos:
     - 2 - Gerente que reporta a outro gerente
     - 3 - ...
 
+Na classificação, tres classes são consideradas:
+- Irá perdir demição nos próximos 3 meses:
+  - Se o valor obtido pela função considerar > 60% de chance.
+- Não irá perdir demição nos próximos 3 meses:
+  - Se o valor obtido pela função considerar < 40% de chance.
+- Incerto:
+  - Se o valor obtido pela função estiver entre 40% e 60% de chance.
+
 ## Distribuição
 Para geração dos dados, as seguintes distribuições foram consideradas:
 
