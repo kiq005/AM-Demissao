@@ -50,6 +50,7 @@ def main():
     args = parser.parse_args()
     dataset = np.load(args.dataset)
 
+    labels = ['Will stay', 'Uncertain', 'Will resign']
     print("Starting...")
     X = np.delete(dataset, -1, axis=1)
     y = dataset[:,-1]
@@ -69,7 +70,8 @@ def main():
     titles = ('SVC with linear kernel',
               'LinearSVC (linear kernel)',
               'SVC with RBF kernel',
-              'SVC with polynomial (degree 3) kernel')
+              'SVC with polynomial (degree 3) kernel',
+              'SVC with sigmoidal kernel')
 
     print("Training...")
     models = (clf.fit(X_train, y_train) for clf in models)
@@ -79,39 +81,41 @@ def main():
         y_pred  = [ clf.predict([x])[0] for x in X_test ]
         #y_scores = [ clf.score([x], [y]) for x,y in zip(X_test, y_test) ]
         
+        print("")
         print(title)
+        print(metrics.classification_report(y_test, y_pred))
         print("Accuracy:", metrics.accuracy_score(y_test, y_pred))
         print("Balanced Accuracy:", metrics.balanced_accuracy_score(y_test, y_pred))
         print("Precision (micro):", metrics.precision_score(y_test, y_pred, average='micro'))
         print("Precision (macro):", metrics.precision_score(y_test, y_pred, average='macro'))
         print("Precision (weighted):", metrics.precision_score(y_test, y_pred, average='weighted'))
 
-    '''
-    fig, sub = plt.subplots(2, 2)
-    plt.subplots_adjust(wspace=.4, hspace=.4)
-
-    X0, X1 = X[:,0], X[:, 1]
-    xx, yy = make_meshgrid(X0, X1)
-    
-    print("Preparing plot...")
-    for clf, title, ax in zip(models, titles, sub.flatten()):
-        plot_contours(ax, clf, xx, yy,
-                      cmap=plt.cm.coolwarm, alpha=.8)
-        ax.scatter(X0, X1, c=y, cmap=plt.cm.coolwarm,
-                   s=20, edgecolors='k')
-        ax.set_xlim(xx.min(), xx.max())
-        ax.set_ylim(yy.min(), yy.max())
-        ax.set_xlabel('X label')
-        ax.set_ylabel('Y label')
-        ax.set_xticks(())
-        ax.set_yticks(())
-        ax.set_title(title)
-        print(title, 'is ready...')
-    
-    print("Show!")
-    plt.show()
-    plt.savefig('plot.png')
-    '''
+        cm = metrics.confusion_matrix(y_test, y_pred)
+        print(cm)
+        
+        # Plot
+        fig, ax = plt.subplots()
+        im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
+        ax.figure.colorbar(im, ax=ax)
+        ax.set(xticks=np.arange(cm.shape[1]),
+               yticks=np.arange(cm.shape[0]),
+               xticklabels=labels,
+               yticklabels=labels,
+               title=title+" Confusion Matrix",
+               ylabel="True",
+               xlabel="Predicted")
+        plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+        
+        # Annotations
+        thresh = cm.max() / 2.0
+        for i in range(cm.shape[0]):
+            for j in range(cm.shape[1]):
+                ax.text(j, i, format(cm[i, j], 'd'),
+                        ha="center", va="center",
+                        color="white" if cm[i, j] > thresh else "black")
+        fig.tight_layout()
+        # Save
+        plt.savefig(title+" Confusion Matrix.png")
 
 if __name__ == '__main__':
     main()

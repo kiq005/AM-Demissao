@@ -1,0 +1,88 @@
+Starting...
+Training...
+Validating...
+
+SVC with linear kernel
+              precision    recall  f1-score   support
+
+        -1.0       0.98      0.86      0.92       284
+         0.0       0.92      0.99      0.96       686
+         1.0       0.92      0.40      0.56        30
+
+   micro avg       0.94      0.94      0.94      1000
+   macro avg       0.94      0.75      0.81      1000
+weighted avg       0.94      0.94      0.93      1000
+
+Accuracy: 0.937
+Balanced Accuracy: 0.7513099002176323
+Precision (micro): 0.937
+Precision (macro): 0.9419121177330133
+Precision (weighted): 0.9389566767560799
+
+LinearSVC (linear kernel)
+              precision    recall  f1-score   support
+
+        -1.0       0.97      0.89      0.93       284
+         0.0       0.92      0.99      0.95       686
+         1.0       0.50      0.03      0.06        30
+
+   micro avg       0.93      0.93      0.93      1000
+   macro avg       0.80      0.64      0.65      1000
+weighted avg       0.92      0.93      0.92      1000
+
+Accuracy: 0.93
+Balanced Accuracy: 0.6358459144892029
+Precision (micro): 0.93
+Precision (macro): 0.7955249808908346
+Precision (weighted): 0.9195596414425684
+
+SVC with RBF kernel
+              precision    recall  f1-score   support
+
+        -1.0       0.97      0.88      0.92       284
+         0.0       0.93      0.99      0.96       686
+         1.0       0.93      0.43      0.59        30
+
+   micro avg       0.94      0.94      0.94      1000
+   macro avg       0.94      0.77      0.82      1000
+weighted avg       0.94      0.94      0.93      1000
+
+Accuracy: 0.938
+Balanced Accuracy: 0.7651722124127988
+Precision (micro): 0.938
+Precision (macro): 0.9407530454042083
+Precision (weighted): 0.9389501661129568
+
+SVC with polynomial (degree 3) kernel
+              precision    recall  f1-score   support
+
+        -1.0       0.98      0.95      0.97       284
+         0.0       0.97      0.99      0.98       686
+         1.0       0.81      0.73      0.77        30
+
+   micro avg       0.97      0.97      0.97      1000
+   macro avg       0.92      0.89      0.91      1000
+weighted avg       0.97      0.97      0.97      1000
+
+Accuracy: 0.969
+Balanced Accuracy: 0.8909938086569302
+Precision (micro): 0.969
+Precision (macro): 0.9221899159883898
+Precision (weighted): 0.9686309372812398
+
+SVC with sigmoidal kernel
+              precision    recall  f1-score   support
+
+        -1.0       0.39      0.40      0.39       284
+         0.0       0.72      0.70      0.71       686
+         1.0       0.13      0.20      0.16        30
+
+   micro avg       0.60      0.60      0.60      1000
+   macro avg       0.41      0.43      0.42      1000
+weighted avg       0.61      0.60      0.60      1000
+
+Accuracy: 0.597
+Balanced Accuracy: 0.4315601089530379
+Precision (micro): 0.597
+Precision (macro): 0.41401817041955447
+Precision (weighted): 0.6073993370533164
