@@ -121,6 +121,7 @@ Três modelos de SVM foram testados, obtendo os seguintes resultados:
 |    macro avg | 0.94      | 0.75   | 0.81     | 1000    |
 | weighted avg | 0.94      | 0.94   | 0.93     | 1000    |
 
+![SVC with linear kernel Confusion Matrix](./img/SVC%20with%20linear%20kernel%20Confusion%20Matrix.png)
 
 ### LinearSVC (linear kernel)
 
@@ -133,6 +134,7 @@ Três modelos de SVM foram testados, obtendo os seguintes resultados:
 |    macro avg | 0.80      | 0.64   | 0.65     | 1000    |
 | weighted avg | 0.92      | 0.93   | 0.92     | 1000    |
 
+![LinearSVC (linear kernel)](./img/LinearSVC%20(linear%20kernel)%20Confusion%20Matrix.png)
 
 ### SVC with RBF kernel
 
@@ -145,6 +147,7 @@ Três modelos de SVM foram testados, obtendo os seguintes resultados:
 |    macro avg | 0.94      | 0.77   | 0.82     | 1000    |
 | weighted avg | 0.94      | 0.94   | 0.93     | 1000    |
 
+![SVC with RBF kernel](./img/SVC%20with%20RBF%20kernel%20Confusion%20Matrix.png)
 
 ### SVC with polynomial (degree 3) kernel
 
@@ -157,6 +160,8 @@ Três modelos de SVM foram testados, obtendo os seguintes resultados:
 |    macro avg | 0.92      | 0.89   | 0.91     | 1000    |
 | weighted avg | 0.97      | 0.97   | 0.97     | 1000    |
 
+![SVC with polynomial (degree 3) kernel](./img/SVC%20with%20polynomial%20(degree%203)%20kernel%20Confusion%20Matrix.png)
+
 ### SVC with sigmoidal kernel
 |              | precision | recall | f1-score | support |
 |--------------|-----------|--------|----------|---------|
@@ -166,3 +171,5 @@ Três modelos de SVM foram testados, obtendo os seguintes resultados:
 |   micro avg  |     0.60  |   0.60 |     0.60 |     1000|
 |   macro avg  |     0.41  |   0.43 |     0.42 |     1000|
 |weighted avg  |     0.61  |   0.60 |     0.60 |     1000|
+
+![SVC with sigmoidal kernel](./img/SVC%20with%20sigmoidal%20kernel%20Confusion%20Matrix.png)
