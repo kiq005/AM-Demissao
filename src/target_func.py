@@ -37,7 +37,7 @@ def exp_rand(nmin, nmax, lambd):
     return min(nmax, max(nmin, random.expovariate(lambd)))
 
 '''
-Atributes
+Attributes
 '''
 def tempo_percurso(x_tp, tempo_percurso_max):
     return lin(x_tp, 0, 0.1, tempo_percurso_max, 0.9)
@@ -156,8 +156,8 @@ def main():
     tp_max = args.tmax
     salario_min = args.smin
     salario_max = args.smax
-    hier_max = 8 
-    dep_max = 12
+    hier_max = args.hmax
+    dep_max = args.dmax
     db = gen(n, idade_empresa, tp_min, tp_max, salario_min, salario_max, hier_max, dep_max)
     
     np.save(args.file, db)
